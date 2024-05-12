@@ -1,5 +1,5 @@
-import React from 'react';
-import QuizCard from './QuizCard';
+import React from "react";
+import QuizCard from "./QuizCard";
 const FetchedQuizes = ({ quizes }) => {
     if (!quizes || !Array.isArray(quizes)) {
         return <div>No quizzes to display</div>;
@@ -8,7 +8,7 @@ const FetchedQuizes = ({ quizes }) => {
     return (
         <div>
             {quizes.map((quizObj, index) => (
-                <QuizCard key={index} question={quizObj.question} options={quizObj.options} />
+                <QuizCard key={index} question={quizObj.question} options={quizObj.incorrect_answers} />
             ))}
         </div>
     );
