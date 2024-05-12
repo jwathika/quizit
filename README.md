@@ -2,6 +2,10 @@
 
 Phase 2 Moringa final project - A quiz app which generates random questions based on different categories.
 
+**Demo video** =>
+
+**Live link** =>
+
 ## Features
 
 ## Technologies used:
