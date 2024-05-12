@@ -70,17 +70,23 @@ const Filtered = ({ categories }) => {
         if (!selectedCategory) return;
 
         const totalMinutes = (parseInt(timeLimitHours, 10) || 0) * 60 + (parseInt(timeLimitMinutes, 10) || 0);
+        const storedQuizzes = JSON.parse(localStorage.getItem('quizes'));
 
-        axios.get(`https://opentdb.com/api.php?amount=${selectedAmount}&category=${selectedCategory}&difficulty=${selectedDifficulty}`)
-            .then((response) => {
-                console.log(response.data.results);
-                setQuizes(response.data.results);
-                localStorage.setItem('quizes', JSON.stringify(setQuizes));
-            })
-            .catch((error) => {
-                console.error('Error fetching questions:', error);
-            });
+        if (storedQuizzes) {
+            setQuizes(storedQuizzes);
+        } else {
+            axios.get(`https://opentdb.com/api.php?amount=${selectedAmount}&category=${selectedCategory}&difficulty=${selectedDifficulty}`)
+                .then((response) => {
+                    console.log(response.data.results);
+                    setQuizes(response.data.results);
+                    localStorage.setItem('quizes', JSON.stringify(response.data.results));
+                })
+                .catch((error) => {
+                    console.error('Error fetching questions:', error);
+                });
+        }
     };
+
 
     return (
         <>
