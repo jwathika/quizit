@@ -14,7 +14,7 @@ const Layout = () => {
               style={{ stroke: '#60a5fa' }}
             />
             <h1 className='text-center text-gray-800 text-lg font-bold mb-6'>
-              Welcome to Quizit App
+              Welcome to the Ultimate Trivia Quiz!
             </h1>
             <p className='text-center text-gray-600'>
               A quiz app which generates random questions based on different categories.

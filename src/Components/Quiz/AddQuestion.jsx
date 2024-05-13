@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-const AddQuestion = ({categories}) => {
+const AddQuestion = ({ categories }) => {
   const [question, setQuestion] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [correctAnswer, setCorrectAnswer] = useState('');
@@ -11,30 +11,30 @@ const AddQuestion = ({categories}) => {
       alert('Please fill in all fields');
       return;
     }
-  
+
     const newQuestion = {
       type: 'multiple',
-      difficulty: 'easy', 
+      difficulty: 'easy',
       category: selectedCategory,
       question: question,
       correct_answer: correctAnswer,
       incorrect_answers: incorrectAnswers.split(',').map(answer => answer.trim()),
     };
-  
+
     const existingQuestions = JSON.parse(localStorage.getItem('quizes')) || [];
-  
+
     const updatedQuestions = [...existingQuestions, newQuestion];
-  
+
     localStorage.setItem('quizes', JSON.stringify(updatedQuestions));
-  
+
     setQuestion('');
     setSelectedCategory('');
     setCorrectAnswer('');
     setIncorrectAnswers('');
-  
+
     alert('Question saved successfully!');
   };
-  
+
 
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
@@ -52,7 +52,7 @@ const AddQuestion = ({categories}) => {
           id="question"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
-          className="border py-2 px-3 text-gray-800 w-full"
+          className="border py-2 px-3 text-gray-800 w-full bg-white"
         />
       </div>
       <div className="mb-5">
@@ -63,7 +63,7 @@ const AddQuestion = ({categories}) => {
           value={selectedCategory}
           onChange={handleCategoryChange}
           id="category"
-          className="border py-2 px-3 text-gray-800 w-full"
+          className="border py-2 px-3 text-gray-800 w-full bg-white"
         >
           <option value="">Choose...</option>
           {categories.map((cat) => (
@@ -82,7 +82,7 @@ const AddQuestion = ({categories}) => {
           id="correctAnswer"
           value={correctAnswer}
           onChange={(e) => setCorrectAnswer(e.target.value)}
-          className="border py-2 px-3 text-gray-800 w-full"
+          className="border py-2 px-3 text-gray-800 w-full bg-white"
         />
       </div>
       <div className="mb-5">
@@ -94,7 +94,7 @@ const AddQuestion = ({categories}) => {
           id="incorrectAnswers"
           value={incorrectAnswers}
           onChange={(e) => setIncorrectAnswers(e.target.value)}
-          className="border py-2 px-3 text-gray-800 w-full"
+          className="border py-2 px-3 text-gray-800 w-full bg-white"
           placeholder='Ex. Mt.Everest, Mt. Kilimanjaro, Mt. Prince ....'
         />
       </div>

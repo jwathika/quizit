@@ -150,7 +150,7 @@ const Filtered = ({ categories }) => {
                 <FetchedQuizes quizes={quizes} timeLimitHours={timeLimitHours} timeLimitMinutes={timeLimitMinutes} />
             ) : (
                 <form onSubmit={handleSubmit}>
-                    <h2 className="text-start font-bold text-xl mb-5"><b>Customize your questions here</b></h2>
+                    <h2 className="text-start font-bold text-xl mb-5">Quiz Settings</h2>
                     <div className="mb-5">
                         <label htmlFor="category" className="block font-bold text-lg text-gray-900 mb-2">
                             Category
@@ -160,7 +160,7 @@ const Filtered = ({ categories }) => {
                             onChange={handleCategoryChange}
                             id="category"
                             name="category"
-                            className="border py-2 px-3 text-gray-800 w-full"
+                            className="border py-2 px-3 text-gray-800 w-full bg-white"
                         >
                             <option>Choose...</option>
                             {categories.map((cat) => (
@@ -182,7 +182,7 @@ const Filtered = ({ categories }) => {
                             name="number_of_questions"
                             min="1"
                             max="50"
-                            className="border py-2 px-3 text-gray-800 w-full"
+                            className="border py-2 px-3 text-gray-800 w-full bg-white"
                         />
                     </div>
                     <div className="my-5">
@@ -198,7 +198,7 @@ const Filtered = ({ categories }) => {
                                     name="time_limit_hours"
                                     min="0"
                                     max="12"
-                                    className="border py-2 px-3 text-gray-800 w-full"
+                                    className="border py-2 px-3 text-gray-800 w-full bg-white"
                                 />
                                 hours
                             </label>
@@ -210,7 +210,7 @@ const Filtered = ({ categories }) => {
                                     name="time_limit_minutes"
                                     min="1"
                                     max="59"
-                                    className="border py-2 px-3 text-gray-800 w-full"
+                                    className="border py-2 px-3 text-gray-800 w-full bg-white"
                                 />
                                 minutes
                             </label>
@@ -223,6 +223,7 @@ const Filtered = ({ categories }) => {
                         Start Quiz
                     </button>
                 </form>
+
             )}
         </>
     );
