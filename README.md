@@ -2,9 +2,9 @@
 
 Phase 2 Moringa final project - A quiz app which generates random questions based on different categories.
 
-**Demo video** =>
+**Demo video** => https://mega.nz/file/mbJXFLSB#dkzSZCY8o2cPqwQFYFW3d9Cw87Zi7DZPsv4Tggp8UAo
 
-**Live link** =>
+**Live link** => https://quizit-delta.vercel.app/
 
 ## Features
 
@@ -12,7 +12,7 @@ Phase 2 Moringa final project - A quiz app which generates random questions base
 
 - React: for the frontend https://react.dev/
 - Daisy UI: A tailwind based component library https://daisyui.com/
-- Vercel: for hosting the web app 
+- Vercel: for hosting the web app https://vercel.com/
 
 ## How to run locally
 
@@ -42,3 +42,12 @@ npm run start
 ```
 
 ## Challenges faced
+
+- On page reload, the user has to restart the process of generating quizzes. This can be resolved by use of localstorage but it is yet to be fixed.
+- Group quizzes and leaderboard not yet available.
+
+## Future plans
+
+- Incorporate login/signup
+
+- Allow codes/links so that users can share the quizzes and play together.
